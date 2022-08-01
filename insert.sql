@@ -66,6 +66,8 @@ INSERT INTO part(part_name, quantity, part_price) VALUES
 ('oil filter', 1000, 15.98),
 ('battery', 80, 200.00)
 
+
+
 SELECT * 
 FROM part;
 
@@ -77,16 +79,18 @@ INSERT INTO "service"("service_name", price, mechanic_id) VALUES
 ('Full detail', 100.00, 3),
 ('Dent repair', 50.00, 3)
 
-INSERT INTO "service"("service_name", price, mechanic_id) VALUES
-('Misc', 5.00, 1)
+
 
 SELECT * 
 FROM "service";
 
 --------------service_ticket Function-----------------
-SELECT addserviceticket(49.50, '890627364b3289s90',1,4);
-SELECT addserviceticket(300.00, '890627364b3289s90',4,5);
-SELECT addserviceticket(200.00, '1728394h64f372j87',6, 5);
+SELECT addServiceTicket(49.50, '890627364b3289s90',1,4);
+SELECT addServiceTicket(300.00, '890627364b3289s90',4,5);
+SELECT addServiceTicket(200.00, '1728394h64f372j87',NULL, 5);
+
+
+
 
 SELECT * 
 FROM service_ticket;
@@ -95,7 +99,8 @@ FROM service_ticket;
 INSERT INTO history(vin, service_ticket_id) VALUES
 ('890627364b3289s90',2),
 ('890627364b3289s90', 3),
-('1728394h64f372j87', 4)
+('1728394h64f372j87', 5)
+
 
 SELECT * 
 FROM history;

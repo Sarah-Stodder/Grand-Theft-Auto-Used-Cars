@@ -86,8 +86,8 @@ CREATE TABLE service_ticket(
     service_ticket_id SERIAL PRIMARY KEY,
     total_cost DECIMAL(10,2),
     vin VARCHAR(17),
-    service_id INTEGER,
-    part_id INTEGER,
+    service_id null,
+    part_id null,
     FOREIGN KEY (vin) REFERENCES customer_car(vin) ON DELETE CASCADE,
     FOREIGN KEY (service_id) REFERENCES "service"(service_id) ON DELETE CASCADE,
     FOREIGN KEY (part_id) REFERENCES part(part_id) ON DELETE CASCADE
